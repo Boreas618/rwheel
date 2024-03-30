@@ -69,10 +69,10 @@ impl<T> DerefMut for SpinLockGuard<'_, T> {
     }
 }
 
-/// A type is considered `Send` if it can be safely transferred to another 
+/// A type is considered `Send` if it can be safely transferred to another
 /// thread. Similarly, a type is deemed `Sync` if it can be safely shared
 /// among threads. In this context, by utilizing `AtomicBool` for managing
-/// access to the spinlock, we are enabled to implement both `Sync` and 
+/// access to the spinlock, we are enabled to implement both `Sync` and
 /// `Send` for `SpinLock<T>`.
 unsafe impl<T> Sync for SpinLock<T> {}
 unsafe impl<T> Send for SpinLock<T> {}

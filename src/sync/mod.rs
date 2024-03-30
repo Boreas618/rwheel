@@ -1,2 +1,3 @@
-pub mod semaphore;
+pub mod mutex;
 pub mod spinlock;
+pub mod semaphore;
